@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <xacro:macro name="robot_body" params="robot_name parent *joint_origin *joint_axis">
+	<joint name="${robot_name}_body_joint" type="prismatic">
+	  <xacro:insert_block name="joint_origin"/>
+	  <parent link="${parent}"/>
+	  <child link="${robot_name}_body_link"/>
+          <limit effort="2" velocity="3" lower="-0.7" upper = "0.7"/>
+          <dynamics damping="0.005" friction="0.1"/>
+	  <xacro:insert_block name="joint_axis"/>
+	</joint>
+
+	<link name="${robot_name}_body_link">
+	  <visual>
+		  <geometry>
+		    <mesh filename="package://robot_description/meshes/base_link_${robot_name}.dae"/>
+		  </geometry>
+	  </visual>
+	  <collision>
+		  <geometry>
+		    <mesh filename="package://robot_description/meshes/base_link.stl"/>
+		  </geometry>
+	  </collision>
+	  <inertial>
+		  <origin xyz="0 0 0"/>
+		  <mass value="0.45"/>
+		  <inertia ixx="0.0003" ixy="0" ixz="0" iyy="0.00026" iyz="0" izz="0.000052"/>
+	  </inertial>
+	</link>
+
+  <gazebo reference="${robot_name}_body_link">
+    <selfCollide>false</selfCollide>
+    <mu1 value="1.2" />
+    <mu2 value="1.2" />
+    <kp>1000000000000</kp>
+    <kd>1</kd>
+  </gazebo>
+
+  </xacro:macro>
+</robot>

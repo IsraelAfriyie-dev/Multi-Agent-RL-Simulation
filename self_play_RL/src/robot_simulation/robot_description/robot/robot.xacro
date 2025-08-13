@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find robot_description)/robot/materials.xacro" />
+  <xacro:include filename="$(find robot_description)/robot/properties.xacro" />
+  <xacro:include filename="$(find robot_description)/robot/macros.xacro" />
+  <xacro:include filename="$(find robot_description)/robot/robot_base.xacro" />  
+  <xacro:include filename="$(find robot_description)/robot/robot_sliding_base.xacro" />  
+  <xacro:include filename="$(find robot_description)/robot/robot_body.xacro" />
+  <xacro:include filename="$(find robot_description)/robot/robot_head.xacro" />
+  <xacro:include filename="$(find robot_description)/robot/robot_control_gazebo.xacro" />
+
+  <xacro:arg name="robot_name" default="robot_1"/>
+
+  <xacro:robot_base robot_name="$(arg robot_name)"/>
+
+  <link name="world"/>
+  
+  <joint name="$(arg robot_name)_connect_root_and_world" type="fixed">
+    <child link="$(arg robot_name)_base_link" />
+    <parent link="world" />
+    <origin xyz="0 0 0" rpy="0 0 0" />    
+  </joint> 
+
+  <xacro:robot_sliding_base robot_name="$(arg robot_name)" parent="$(arg robot_name)_base_link">
+	  <origin xyz="-0.07 0 0.085" rpy="0 0 0"/>
+	  <axis xyz="1 0 0"/>
+  </xacro:robot_sliding_base>
+
+  <xacro:robot_body robot_name="$(arg robot_name)" parent="$(arg robot_name)_sliding_base_link">
+	  <origin xyz="0.0 0.0 0.065" rpy="0 0 0"/>
+	  <axis xyz="0 1 0"/>
+  </xacro:robot_body>
+  
+  <xacro:robot_gazebo_systems robot_name="$(arg robot_name)"/>
+
+  <xacro:robot_head robot_name="$(arg robot_name)" parent="$(arg robot_name)_body_link">
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <axis xyz="1 0 0"/>
+  </xacro:robot_head>
+
+</robot>

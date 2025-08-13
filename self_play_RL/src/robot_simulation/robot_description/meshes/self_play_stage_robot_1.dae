@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.4.1 commit date:2022-12-19, commit time:17:00, hash:55485cb379f7</authoring_tool>
+    </contributor>
+    <created>2024-01-28T17:09:42</created>
+    <modified>2024-01-28T17:09:42</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Material_001-effect">
+      <profile_COMMON>
+        <newparam sid="selfplay_stage_half_agent_1_png-surface">
+          <surface type="2D">
+            <init_from>selfplay_stage_half_agent_1_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="selfplay_stage_half_agent_1_png-sampler">
+          <sampler2D>
+            <source>selfplay_stage_half_agent_1_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="selfplay_stage_half_agent_1_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="selfplay_stage_half_agent_1_png" name="selfplay_stage_half_agent_1_png">
+      <init_from>selfplay_stage_half_agent_1.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Material_001-material" name="Material.001">
+      <instance_effect url="#Material_001-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="selfplay_stage_half_v2-mesh" name="selfplay_stage_half v2">
+      <mesh>
+        <source id="selfplay_stage_half_v2-mesh-positions">
+          <float_array id="selfplay_stage_half_v2-mesh-positions-array" count="48">0 750 250 0 750 100 0 770 250 0 770 0 0 -750 100 0 -770 0 0 -770 250 0 -750 250 -1520 -750 250 -1520 -770 250 -1520 770 0 -1520 770 250 -1520 -770 0 -1520 -750 100 -1520 750 100 -1520 750 250</float_array>
+          <technique_common>
+            <accessor source="#selfplay_stage_half_v2-mesh-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="selfplay_stage_half_v2-mesh-normals">
+          <float_array id="selfplay_stage_half_v2-mesh-normals-array" count="18">1 0 0 0 0 1 0 1 0 0 0 -1 0 -1 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#selfplay_stage_half_v2-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="selfplay_stage_half_v2-mesh-map-0">
+          <float_array id="selfplay_stage_half_v2-mesh-map-0-array" count="168">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.18806e-5 0.9165955 0.8443811 0.9165955 9.18806e-5 0.9999085 9.18806e-5 0.9999085 0.8443811 0.9165955 0.8443811 0.9999085 0.8443812 0.08340454 9.197e-5 0.08340454 0.8443812 9.15527e-5 0.8443812 9.15527e-5 9.197e-5 0.08340454 9.19551e-5 9.15527e-5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.197e-5 0.08340454 0.8443812 0.08340454 9.18806e-5 0.9165955 9.18806e-5 0.9165955 0.8443812 0.08340454 0.8443811 0.9165955</float_array>
+          <technique_common>
+            <accessor source="#selfplay_stage_half_v2-mesh-map-0-array" count="84" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="selfplay_stage_half_v2-mesh-vertices">
+          <input semantic="POSITION" source="#selfplay_stage_half_v2-mesh-positions"/>
+        </vertices>
+        <triangles material="Material_001-material" count="28">
+          <input semantic="VERTEX" source="#selfplay_stage_half_v2-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#selfplay_stage_half_v2-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#selfplay_stage_half_v2-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 2 0 3 1 0 4 3 0 5 3 0 6 1 0 7 4 0 8 3 0 9 4 0 10 5 0 11 5 0 12 4 0 13 6 0 14 6 0 15 4 0 16 7 0 17 7 1 18 8 1 19 6 1 20 6 1 21 8 1 22 9 1 23 3 2 24 10 2 25 2 2 26 2 2 27 10 2 28 11 2 29 5 3 30 12 3 31 3 3 32 3 3 33 12 3 34 10 3 35 4 2 36 13 2 37 7 2 38 7 2 39 13 2 40 8 2 41 14 4 42 1 4 43 15 4 44 15 4 45 1 4 46 0 4 47 15 5 48 11 5 49 14 5 50 14 5 51 11 5 52 10 5 53 14 5 54 10 5 55 12 5 56 14 5 57 12 5 58 13 5 59 13 5 60 12 5 61 9 5 62 13 5 63 9 5 64 8 5 65 6 4 66 9 4 67 5 4 68 5 4 69 9 4 70 12 4 71 15 1 72 0 1 73 11 1 74 11 1 75 0 1 76 2 1 77 1 1 78 14 1 79 4 1 80 4 1 81 14 1 82 13 1 83</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="selfplay_stage_half_v2" name="selfplay_stage_half v2" type="NODE">
+        <matrix sid="transform">0.001 0 0 0 0 0.001 0 0 0 0 0.001 0 0 0 0 1</matrix>
+        <instance_geometry url="#selfplay_stage_half_v2-mesh" name="selfplay_stage_half v2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material_001-material" target="#Material_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

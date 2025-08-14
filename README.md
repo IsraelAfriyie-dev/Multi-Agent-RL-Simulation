@@ -35,13 +35,6 @@ ros2 run reinforcement_learning ppo_train.py
 ```
 Training takes about 20hrs to complete, and  after that you can check the log file to see the profile of the training 
 
-<div align="center">
-    <img src="logFile.png" width="50%"/>
-</div>
 
-
-<div align="center">
-  <img src="training.gif" alt="Nav2 Simulation Demo" width="30%"/>
-</div>
-
+ <img src="training.gif" width="40%">   <img src="logFile.png" height="20%"> 
 

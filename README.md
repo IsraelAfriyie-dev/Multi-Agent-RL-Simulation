@@ -8,6 +8,7 @@ The objective of the game is to get a point(shoot the ball outside the back line
 
 #### Obeservation space: Both agent's positions (x,y) and ball position (x,y,z)
 
+
 #### State: Array of current and previous positions of the agents and the ball.
 Actions: An agent is able to move in x,y direction. The agent can also move a semicircle part in front of it to punch the ball harder.
 

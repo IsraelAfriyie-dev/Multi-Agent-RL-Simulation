@@ -40,4 +40,8 @@ Training takes about 20hrs to complete, and  after that you can check the log fi
 </div>
 
 
+<div align="center">
+  <img src="training.gif" alt="Nav2 Simulation Demo" width="30%"/>
+</div>
+
 

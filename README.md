@@ -35,6 +35,10 @@ ros2 run reinforcement_learning ppo_train.py
 ```
 Training takes about 20hrs to complete, and  after that you can check the log file to see the profile of the training 
 
+Run the test Set after the training is complete:
+``` shell
+ros2 run reinforcement_learning ppo_test.py
+```
 
- <img src="training.gif" width="40%">   <img src="logFile.png" height="20%"> 
+ <img src="training.gif" width="40%">                  <img src="logFile.png"  width="55%"> 
 

@@ -8,7 +8,7 @@ The objective of the game is to get a point(shoot the ball outside the back line
 
 #### Obeservation space: Both agent's positions (x,y) and ball position (x,y,z)
 <div align="center">
-    <img src="agents.png" height="10%"/>
+    <img src="agents.png" width="10%"/>
 </div>
 
 #### State: Array of current and previous positions of the agents and the ball.

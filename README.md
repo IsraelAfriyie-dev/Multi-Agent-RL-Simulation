@@ -7,7 +7,9 @@ This is then demonstrted in gazebo simulation using ROS2 humble
 The objective of the game is to get a point(shoot the ball outside the back line of the oppponent's court)
 
 #### Obeservation space: Both agent's positions (x,y) and ball position (x,y,z)
-
+<div align="center">
+    <img src="agents.png" width="50%"/>
+</div>
 
 #### State: Array of current and previous positions of the agents and the ball.
 Actions: An agent is able to move in x,y direction. The agent can also move a semicircle part in front of it to punch the ball harder.
